@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+    <span>Calcolatrice</span>
+</mat-toolbar>
+
+<table id="calcu"> 
+  <tr> 
+      <td colspan="3"> 
+          <input type="text" value={{concat}} readonly>
+      </td> 
+      <td><app-btn-canc (click)="canc()"></app-btn-canc></td> 
+  </tr> 
+
+  <tr> 
+      <td><app-btn-num [num]=1 (click)="insertInOperation('1')"></app-btn-num></td> 
+      <td><app-btn-num [num]=2 (click)="insertInOperation('2')"></app-btn-num></td> 
+      <td><app-btn-num [num]=3 (click)="insertInOperation('3')"></app-btn-num></td> 
+      <td><app-btn-operator [out]="division" (click)="choosenOp('division')"></app-btn-operator></td> 
+  </tr> 
+  <tr> 
+      <td><app-btn-num [num]=4 (click)="insertInOperation('4')"></app-btn-num></td> 
+      <td><app-btn-num [num]=5 (click)="insertInOperation('5')"></app-btn-num></td> 
+      <td><app-btn-num [num]=6 (click)="insertInOperation('6')"></app-btn-num></td> 
+      <td><app-btn-operator [out]="mult" (click)="choosenOp('mult')"></app-btn-operator></td> 
+  </tr> 
+  <tr> 
+      <td><app-btn-num [num]=7 (click)="insertInOperation('7')"></app-btn-num></td> 
+      <td><app-btn-num [num]=8 (click)="insertInOperation('8')"></app-btn-num></td> 
+      <td><app-btn-num [num]=9 (click)="insertInOperation('9')"></app-btn-num></td> 
+      <td><app-btn-operator [out]="sum" (click)="choosenOp('sum')"></app-btn-operator></td> 
+  </tr> 
+  <tr> 
+      <td><app-btn-num [num]=0></app-btn-num></td> 
+      <td><app-btn-operator [out]="point" (click)="addPoint()"></app-btn-operator></td> 
+      <td><app-btn-equal (click)="equal()"></app-btn-equal></td> 
+      <td><app-btn-operator [out]="sub" (click)="choosenOp('sub')"></app-btn-operator></td> 
+  </tr> 
+</table> 
